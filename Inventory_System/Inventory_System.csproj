@@ -1,0 +1,455 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2054DD10-1BE1-4B1A-8D73-D3D288F1A118}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Inventory_System</RootNamespace>
+    <AssemblyName>Inventory_System</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EncryptPassword35">
+      <HintPath>..\..\..\..\GENERAL\C# FILES\DLL FILES\EncryptPassword35.dll</HintPath>
+    </Reference>
+    <Reference Include="EncryptString">
+      <HintPath>..\..\..\..\..\Downloads\Benford Pharmacy (3)\Benford Pharmacy\Benford Pharmacy\bin\Debug\EncryptString.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="API\CategoryFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="API\CategoryFrm.Designer.cs">
+      <DependentUpon>CategoryFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="API\Customers\ChequePaymentFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="API\Customers\ChequePaymentFrm.Designer.cs">
+      <DependentUpon>ChequePaymentFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="API\Customers\CustomerManagementFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="API\Customers\CustomerManagementFrm.Designer.cs">
+      <DependentUpon>CustomerManagementFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="API\Customers\RegisterCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="API\Customers\RegisterCustomer.Designer.cs">
+      <DependentUpon>RegisterCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="API\DashboardFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="API\DashboardFrm.Designer.cs">
+      <DependentUpon>DashboardFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="API\Notification\MessageTransactionFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="API\Notification\MessageTransactionFrm.Designer.cs">
+      <DependentUpon>MessageTransactionFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="API\Reports\crpReceipt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crpReceipt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="API\Reports\crpSales.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crpSales.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="API\Reports\dsReports.cs">
+      <DependentUpon>dsReports.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="API\Reports\ReceiptFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="API\Reports\ReceiptFrm.Designer.cs">
+      <DependentUpon>ReceiptFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="API\Sales_mgt\ReturneditemsMgtFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="API\Sales_mgt\ReturneditemsMgtFrm.Designer.cs">
+      <DependentUpon>ReturneditemsMgtFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="API\Sales_mgt\ReturnItemFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="API\Sales_mgt\ReturnItemFrm.Designer.cs">
+      <DependentUpon>ReturnItemFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="API\Sales_mgt\ReturnItemSearchFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="API\Sales_mgt\ReturnItemSearchFrm.Designer.cs">
+      <DependentUpon>ReturnItemSearchFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="API\Sales_mgt\ReturnPurchaseFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="API\Sales_mgt\ReturnPurchaseFrm.Designer.cs">
+      <DependentUpon>ReturnPurchaseFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="API\Sales_mgt\SetReceiptrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="API\Sales_mgt\SetReceiptrm.Designer.cs">
+      <DependentUpon>SetReceiptrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="API\User_Security\ForgotPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="API\User_Security\ForgotPassword.Designer.cs">
+      <DependentUpon>ForgotPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="API\User_Security\Loginfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="API\User_Security\Loginfrm.Designer.cs">
+      <DependentUpon>Loginfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="API\Notification\PrinterNotificationFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="API\Notification\PrinterNotificationFrm.Designer.cs">
+      <DependentUpon>PrinterNotificationFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="API\ProductRegistrationFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="API\ProductRegistrationFrm.Designer.cs">
+      <DependentUpon>ProductRegistrationFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="API\RegistrationFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="API\RegistrationFrm.Designer.cs">
+      <DependentUpon>RegistrationFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="API\Reports\CrpStock.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrpStock.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="API\Reports\dsReports.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsReports.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="API\Reports\ReportsFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="API\Reports\ReportsFrm.Designer.cs">
+      <DependentUpon>ReportsFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="API\User_Security\LogoutFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="API\User_Security\LogoutFrm.Designer.cs">
+      <DependentUpon>LogoutFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="API\User_Security\ResetForgotenPassFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="API\User_Security\ResetForgotenPassFrm.Designer.cs">
+      <DependentUpon>ResetForgotenPassFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="API\User_Security\ResetLoginFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="API\User_Security\ResetLoginFrm.Designer.cs">
+      <DependentUpon>ResetLoginFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="API\Sales_mgt\ItemsViewFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="API\Sales_mgt\ItemsViewFrm.Designer.cs">
+      <DependentUpon>ItemsViewFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="API\Sales_mgt\SalesFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="API\Sales_mgt\SalesFrm.Designer.cs">
+      <DependentUpon>SalesFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="API\Sales_mgt\SalesInformationFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="API\Sales_mgt\SalesInformationFrm.Designer.cs">
+      <DependentUpon>SalesInformationFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="API\StaffFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="API\StaffFrm.Designer.cs">
+      <DependentUpon>StaffFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="API\StockManagementFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="API\StockManagementFrm.Designer.cs">
+      <DependentUpon>StockManagementFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="API\UpdateStockFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="API\UpdateStockFrm.Designer.cs">
+      <DependentUpon>UpdateStockFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="API\User_Security\UserLogFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="API\User_Security\UserLogFrm.Designer.cs">
+      <DependentUpon>UserLogFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Factory.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Cheque.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Helper\AppSettings.cs" />
+    <Compile Include="Models\Helper\DataGridStyle.cs" />
+    <Compile Include="Interface\IAppSettings.cs" />
+    <Compile Include="Models\Helper\DGVPrinterHelper.cs" />
+    <Compile Include="Models\Helper\ImageLoader.cs" />
+    <Compile Include="Interface\ISqlHelper.cs" />
+    <Compile Include="Interface\MyPrinter.cs" />
+    <Compile Include="Interface\IUsers.cs" />
+    <Compile Include="Models\Helper\SqlHelper.cs" />
+    <Compile Include="Models\Helper\UserActivity.cs" />
+    <Compile Include="Models\Helper\Users.cs" />
+    <Compile Include="Models\Helper\Validation.cs" />
+    <Compile Include="Models\Products.cs" />
+    <Compile Include="Models\Sales.cs" />
+    <Compile Include="Models\Staff.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="API\CategoryFrm.resx">
+      <DependentUpon>CategoryFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="API\Customers\ChequePaymentFrm.resx">
+      <DependentUpon>ChequePaymentFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="API\Customers\CustomerManagementFrm.resx">
+      <DependentUpon>CustomerManagementFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="API\Customers\RegisterCustomer.resx">
+      <DependentUpon>RegisterCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="API\DashboardFrm.resx">
+      <DependentUpon>DashboardFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="API\Notification\MessageTransactionFrm.resx">
+      <DependentUpon>MessageTransactionFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="API\Reports\crpReceipt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crpReceipt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="API\Reports\crpSales.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crpSales.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="API\Reports\ReceiptFrm.resx">
+      <DependentUpon>ReceiptFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="API\Sales_mgt\ReturneditemsMgtFrm.resx">
+      <DependentUpon>ReturneditemsMgtFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="API\Sales_mgt\ReturnItemFrm.resx">
+      <DependentUpon>ReturnItemFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="API\Sales_mgt\ReturnItemSearchFrm.resx">
+      <DependentUpon>ReturnItemSearchFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="API\Sales_mgt\ReturnPurchaseFrm.resx">
+      <DependentUpon>ReturnPurchaseFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="API\Sales_mgt\SetReceiptrm.resx">
+      <DependentUpon>SetReceiptrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="API\User_Security\ForgotPassword.resx">
+      <DependentUpon>ForgotPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="API\User_Security\Loginfrm.resx">
+      <DependentUpon>Loginfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="API\Notification\PrinterNotificationFrm.resx">
+      <DependentUpon>PrinterNotificationFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="API\ProductRegistrationFrm.resx">
+      <DependentUpon>ProductRegistrationFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="API\RegistrationFrm.resx">
+      <DependentUpon>RegistrationFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="API\Reports\CrpStock.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrpStock.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="API\Reports\ReportsFrm.resx">
+      <DependentUpon>ReportsFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="API\User_Security\LogoutFrm.resx">
+      <DependentUpon>LogoutFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="API\User_Security\ResetForgotenPassFrm.resx">
+      <DependentUpon>ResetForgotenPassFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="API\User_Security\ResetLoginFrm.resx">
+      <DependentUpon>ResetLoginFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="API\Sales_mgt\ItemsViewFrm.resx">
+      <DependentUpon>ItemsViewFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="API\Sales_mgt\SalesFrm.resx">
+      <DependentUpon>SalesFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="API\Sales_mgt\SalesInformationFrm.resx">
+      <DependentUpon>SalesInformationFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="API\StaffFrm.resx">
+      <DependentUpon>StaffFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="API\StockManagementFrm.resx">
+      <DependentUpon>StockManagementFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="API\UpdateStockFrm.resx">
+      <DependentUpon>UpdateStockFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="API\User_Security\UserLogFrm.resx">
+      <DependentUpon>UserLogFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="API\Reports\dsReports.xsc">
+      <DependentUpon>dsReports.xsd</DependentUpon>
+    </None>
+    <None Include="API\Reports\dsReports.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReports.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="API\Reports\dsReports.xss">
+      <DependentUpon>dsReports.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app icon.ico" />
+    <None Include="Images\Purchase Order_24px.png" />
+    <None Include="Images\User Credentials_24px.png" />
+    <None Include="Images\Activity Grid 2_24px.png" />
+    <None Include="Images\Banknotes_20px.png" />
+    <None Include="Images\Ok_96px.png" />
+    <None Include="Images\Search_24px_2.png" />
+    <None Include="Images\Logout Rounded_48px.png" />
+    <None Include="Images\Shutdown_48px.png" />
+    <None Include="Images\Report Card_24px.png" />
+    <None Include="Images\Print_20px.png" />
+    <None Include="Images\Buy_24px.png" />
+    <None Include="Images\Paycheque_24px.png" />
+    <None Include="Images\Refund 2_24px.png" />
+    <None Include="Images\Return Purchase_24px_1.png" />
+    <None Include="Images\Checkout_24px.png" />
+    <None Include="Images\Sell Stock_24px.png" />
+    <None Include="Images\Plus_20px_2.png" />
+    <None Include="Images\Plus_20px_1.png" />
+    <None Include="Images\Cancel_20px.png" />
+    <None Include="Images\Replace_20px.png" />
+    <None Include="Images\Visible_20px.png" />
+    <None Include="Images\add_24px.png" />
+    <None Include="Images\Backspace_24px.png" />
+    <None Include="Images\Backspace_20px.png" />
+    <None Include="Images\Ok_24px.png" />
+    <None Include="Images\Lock_96px.png" />
+    <None Include="Images\Cancel_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
